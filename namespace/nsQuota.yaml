@@ -1,0 +1,17 @@
+piVersion: v1
+kind: Pod
+metadata:
+  name: ns-quota
+  namespace: eks-example
+spec:
+  containers:
+  - name: ns-quota
+    image: ubuntu
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo hello; sleep 10;done"]
+    resources:
+      requests:
+        memory: "1Gi"
+      limits:
+        memory: "1Gi"
+  priorityClassName: high

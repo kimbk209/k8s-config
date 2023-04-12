@@ -1,0 +1,17 @@
+piVersion: v1
+kind: Service
+metadata:
+  name: eks-example
+  namespace: eks-example
+  labels:
+    app: eks-example
+spec:
+  type: LoadBalancer /*TO-DO*?
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: eks-example
+
