@@ -29,8 +29,8 @@ spec:
             memory: "64Mi"
             cpu: "400m"
         ports:
-        - containerPort: 80
-          name: http
+        - name: http
+          containerPort: 80
           protocol: TCP
         livenessProbe:
           httpGet:
