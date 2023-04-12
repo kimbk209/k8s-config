@@ -1,4 +1,4 @@
-piVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: eks-example
@@ -6,8 +6,7 @@ metadata:
   labels:
     app: eks-example
   annotations:
-    # Container Image Automated Updates
-    flux.weave.works/automated: "True" //*TO-DO*
+    flux.weave.works/automated: "True"
 spec:
   replicas: 1 //*To-DO*
   selector:
@@ -20,12 +19,12 @@ spec:
     spec:
       containers:
       - name: eks-example
-        image: 611056723879.dkr.ecr.us-east-2.amazonaws.com/eks-example:6bb7c4a9 //*TO-DO*
+        image: 611056723879.dkr.ecr.us-east-2.amazonaws.com/eks-example:6bb7c4a9
         imagePullPolicy: IfNotPresent
                 resources:
           requests: 
-            memory: "64Mi" //*TO-DO*
-            cpu: "200m" //*TO-DO*
+            memory: "64Mi"
+            cpu: "200m"
           limits:
             memory: "64Mi"
             cpu: "400m"
